@@ -1,0 +1,47 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Check-In</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div>
+                <h1>Ranger Radar</h1>
+                <p class="banner">Tagline here.</p>
+            </div>
+
+            <div>
+                <select className='dropdown'>
+                    <option value="">Regions</option>
+                    <option value="1">Botswana</option>
+                    <option value="2">Zimbabwe</option>
+                    <option value="3">South Africa</option>
+                </select>
+            </div>
+
+            <div>
+                <select className='dropdown'>
+                    <option value="">Species</option>
+                    <option value="1">African Elephant</option>
+                    <option value="2">Rhino</option>
+                    <option value="3">Sloth</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="main.js"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <script src="sw.js"></script>
+</body>
+
+</html>
