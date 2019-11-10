@@ -1,66 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Ranger Radar</title>
-  <script src='./config.js'></script>
-  <style>
-    #map {
-      height: 500px;
-    }
-  </style>
-</head>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ranger Radar</title>
+    <link rel="stylesheet" href="./styles/style.css" type="text/css" />
+    <script src="./config.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/e78ff938c7.js"></script> -->
+    <!-- <i class="radar-icon" class="fas fa-satellite-dish"></i> -->
+  </head>
 <body>
-  <div id="navbar"><span>Google Maps - Javascript API</span></div>
-  <div id="wrapper">
-    <div id="map"></div>
-    <form onSubmit="event.preventDefault();handleAnimalSubmit(event)">
-            <div>
-              <h1>Welcome to the Meetup!</h1>
-              <p class="banner">Please Fill Out Data</p>
-            </div>
-      
-            <div>
-              <select type='dropdown' id='animal_dropdown'>
-                <option value="01">Select your Animal</option>
-                <option value="12">Rhinoceros</option>
-                <option value="23">Elephant</option>
-              </select>
-            </div>
-      
-            <div>
-              <select type='dropdown' id='captive_dropdown'>
-                <option value="true">True</option>
-                <option value="False">False</option>
-              </select>
-            </div>
-      
-            <div>
-              <select type='dropdown' id='mappable_dropdown'>
-                <option value="true">True</option>
-                <option value="False">False</option>
-              </select>
-            </div>
-      
-            <div>
-              <select type='dropdown' id='threatened_dropdown'>
-                <option value="true">True</option>
-                <option value="False">False</option>
-              </select>
-            </div>
-      
-            <div>
-              <input type="start_date" value="2010-08-10">
-            </div>
-      
-            <div>
-              <input type="end_date" value="2019-08-10">
-            </div>
-            <button onclick="handleAnimalSubmit();initMap();" type="submit">Submit</button>
-          </form>
+  <div class="view-container">
+    <div class="main-container">
+    <div class="header-wrap">
+      <div id="mainTitle">Ranger Radar</div>
+      <hr class="style-seven"/>
+    </div>
+    <div class="row">
+    <div class="col-6 col-toggle">
+      <form onSubmit="event.preventDefault();handleAnimalSubmit(event)">
+      <div class="toggle-label">Species</div>
+        <br />
+          <input class="toggle-view" type="checkbox" id="allToggle">
+          <div class="toggle-item">Show All</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="elephantToggle">
+          <div class="toggle-item">Elephants</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="rhinoToggle" value="23">
+          <div class="toggle-item">Rhinos</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="parrotToggle">
+          <div class="toggle-item">Parrots</div>
+        <br />
+        <br />
+        <!-- onclick="showSpecies() -->
+    </div>
+    <div class="col-6 col-toggle">
+      <div class="toggle-label">Data Points</div>
+        <br />
+          <input class="toggle-view" type="checkbox" id="allToggle">
+          <div class="toggle-item">Show All</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="routeToggle">
+          <div class="toggle-item">Routes</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="sightingsToggle">
+          <div class="toggle-item">Sightings</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="corridorsToggle">
+          <div class="toggle-item">Corridors</div>
+        <br />
+        <br />
+        <!-- onclick="showAllData()
+        onclick="showCorridors()
+        onclick="showSightings()
+        onclick="showRoutes() -->
+      </div>
+    </div>
+    <div class="row">
+      <div id="button-wrap">
+        <button onclick="initMap();handleAnimalSubmit();" type="submit" id="submit-button">Submit</button>
+      </div>
+    </form>
+    </div>
+    <div class="row">
+      <div id="map-wrapper">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+</div>
     <script>
       document.write("<script src='" + "https://maps.googleapis.com/maps/api/js?key=" + config + "&callback=initMap" +
         "'><\/script>");
@@ -73,41 +90,8 @@
           },
           zoom: 9
         });
-        var cities = [{
-            "lat": "-1.5398388646",
-            "long": "35.012608336"
-          },
-          {
-            "lat": "0.3507374091",
-            "long": "37.5253124093"
-          },
-          {
-            "lat": "-33.524746457",
-            "long": "25.7267441351"
-          }
-        ]
-        for (let i = 0; i < cities.length; i++) {
-          var t = {
-            lat: Number(cities[i].lat),
-            lng: Number(cities[i].long)
-          };
-          var icon = {
-            url: './elephante.png',
-            scaledSize: new google.maps.Size(50, 50),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(25, 25)
-          }
-          var marker = new google.maps.Marker({
-            position: t,
-            map: map,
-            icon: icon
-          });
         }
-      }
     </script>
-  </div>
-
-  <script src="app.js"></script>
-</body>
-
+    <script src="./app.js"></script>
+  </body>
 </html>
