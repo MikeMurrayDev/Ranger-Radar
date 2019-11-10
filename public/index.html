@@ -18,6 +18,50 @@
   <div id="navbar"><span>Google Maps - Javascript API</span></div>
   <div id="wrapper">
     <div id="map"></div>
+    <form onSubmit="event.preventDefault();handleAnimalSubmit(event)">
+            <div>
+              <h1>Welcome to the Meetup!</h1>
+              <p class="banner">Please Fill Out Data</p>
+            </div>
+      
+            <div>
+              <select type='dropdown' id='animal_dropdown'>
+                <option value="01">Select your Animal</option>
+                <option value="12">Rhinoceros</option>
+                <option value="23">Elephant</option>
+              </select>
+            </div>
+      
+            <div>
+              <select type='dropdown' id='captive_dropdown'>
+                <option value="true">True</option>
+                <option value="False">False</option>
+              </select>
+            </div>
+      
+            <div>
+              <select type='dropdown' id='mappable_dropdown'>
+                <option value="true">True</option>
+                <option value="False">False</option>
+              </select>
+            </div>
+      
+            <div>
+              <select type='dropdown' id='threatened_dropdown'>
+                <option value="true">True</option>
+                <option value="False">False</option>
+              </select>
+            </div>
+      
+            <div>
+              <input type="start_date" value="2010-08-10">
+            </div>
+      
+            <div>
+              <input type="end_date" value="2019-08-10">
+            </div>
+            <button onclick="handleAnimalSubmit();initMap();" type="submit">Submit</button>
+          </form>
     <script>
       document.write("<script src='" + "https://maps.googleapis.com/maps/api/js?key=" + config + "&callback=initMap" +
         "'><\/script>");
@@ -47,24 +91,17 @@
           }
         ]
 
-        for (let i = 0; i< cities.length; i++) {
+        for (let i = 0; i < cities.length; i++) {
           var t = {
             lat: Number(cities[i].lat),
             lng: Number(cities[i].long)
           };
 
           var icon = {
-              url: './elephante.png',
-              scaledSize: new google.maps.Size(50, 50),
-              origin: new google.maps.Point(0,0),
-              anchor: new google.maps.Point(25, 25)
-          }
-
-          var personeIcon = {
-              url: './personee.png',
-              scaledSize: new google.maps.Size(20, 20),
-              origin: new google.maps.Point(0,0),
-              anchor: new google.maps.Point(10, 10)
+            url: './elephante.png',
+            scaledSize: new google.maps.Size(50, 50),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(25, 25)
           }
 
           var marker = new google.maps.Marker({
@@ -72,20 +109,13 @@
             map: map,
             icon: icon
           });
-
-          var marker = new google.maps.Marker({
-            position: {
-              lat: -33.4887225126,
-              lng: 25.9328101723
-            },
-            map: map,
-            icon: personeIcon
-          })
         }
       }
 
     </script>
   </div>
+
+  <script src="app.js"></script>
 </body>
 
 </html>
