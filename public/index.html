@@ -10,7 +10,7 @@
     <body>
 
         <div class="container">
-            <form onSubmit="event.preventDefault();handleAnimalSubmit(event)">
+            <!-- <form onSubmit="event.preventDefault();handleAnimalSubmit(event)">
                 <div>
                     <h1>Welcome to the Meetup!</h1>
                     <p class="banner">Please Fill Out Data</p>
@@ -53,9 +53,36 @@
                     <input type="end_date" value="2019-08-10">
                 </div>
                 <button type="submit">Submit</button>
-            </form>
+            </form> -->
+
+            <button type="button" onclick="handleAnimalSubmit()">Click Me</button>
         </div>
 
-        <script src="bundle.js"></script>
+        <!-- <script type="text/javascript">
+
+            function handleAnimalSubmit() {  
+            event.preventDefault();
+
+            fetch('https://api.inaturalist.org/v1/observations?taxon_id=43693&captive=false&mappable=true&threatened=true&d1=2019-01-01&d2=2019-11-09')
+                .then(res => res.json())
+                .then(data => {
+                var naturalistLocations = data.results.map(el => el.location);
+                var observed = data.results.map(el => el.observed_on);
+                });
+
+            axios
+                .get('/sightings')
+                .then(response => JSON.stringify(response.data))
+                .then(data => {
+                var movebankLat = data.map(el => el.lat);
+                console.log('Move Lat: ', movebankLat);
+                var movebankLong = data.map(el => el.long);
+                console.log('Move Long: ', movebankLong);
+                });
+
+            }
+        </script> -->
+
+        <script type="text/javascript" src="bundle.js"></script>
     </body>
 </html>
