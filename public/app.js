@@ -13,11 +13,50 @@ function handleAnimalSubmit(event) {
   
         map = new google.maps.Map(document.getElementById('map'), {
           center: {
-            lat: -1.5398388646,
-            lng: 35.012608336
+            lat: -19.16, lng: 15.86
           },
           zoom: 9
         });
+
+        var c1 = corridors[0]
+          var c2 = corridors[1]
+          var c3 = corridors[2]
+
+          // Construct the polygon.
+          var cor1 = new google.maps.Polygon({
+            paths: c1,
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#FF0000",
+            fillOpacity: 0.35
+          });
+
+          var cor2 = new google.maps.Polygon({
+            paths: c2,
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#FF0000",
+            fillOpacity: 0.35
+          });
+
+          var cor3 = new google.maps.Polygon({
+            paths: c3,
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#FF0000",
+            fillOpacity: 0.35
+          });
+
+
+
+
+          cor1.setMap(map);
+          cor2.setMap(map);
+          cor3.setMap(map);
+
   
         for (let i = 0; i < inaturalistLocations.length; i++) {
   
