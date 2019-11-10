@@ -1,15 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Ranger Radar</title>
+  <script src='./config.js'></script>
+  <style>
+    #map {
+      height: 500px;
+    }
 
-        <link href="style.css" rel="stylesheet" type="text/css">
-        <title>Ranger Radar</title>
-    </head>
+  </style>
+</head>
 
-    <body>
+<body>
+  <div id="navbar"><span>Google Maps - Javascript API</span></div>
+  <div id="wrapper">
+    <div id="map"></div>
+    <script>
+      document.write("<script src='" + "https://maps.googleapis.com/maps/api/js?key=" + config + "&callback=initMap" +
+        "'><\/script>");
+      var map;
 
-    </body>
+      function initMap() {
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {
+            lat: -1.5398388646,
+            lng: 35.012608336
+          },
+          zoom: 9
+        });
+
+        var cities = [{
+            "lat": "-1.5398388646",
+            "long": "35.012608336"
+          },
+          {
+            "lat": "0.3507374091",
+            "long": "37.5253124093"
+          },
+          {
+            "lat": "-33.524746457",
+            "long": "25.7267441351"
+          }
+        ]
+
+        for (let i = 0; i< cities.length; i++) {
+          var t = {
+            lat: Number(cities[i].lat),
+            lng: Number(cities[i].long)
+          };
+
+          var icon = {
+              url: './elephante.png',
+              scaledSize: new google.maps.Size(50, 50),
+              origin: new google.maps.Point(0,0),
+              anchor: new google.maps.Point(25, 25)
+          }
+
+          var personeIcon = {
+              url: './personee.png',
+              scaledSize: new google.maps.Size(20, 20),
+              origin: new google.maps.Point(0,0),
+              anchor: new google.maps.Point(10, 10)
+          }
+
+          var marker = new google.maps.Marker({
+            position: t,
+            map: map,
+            icon: icon
+          });
+
+          var marker = new google.maps.Marker({
+            position: {
+              lat: -33.4887225126,
+              lng: 25.9328101723
+            },
+            map: map,
+            icon: personeIcon
+          })
+        }
+      }
+
+    </script>
+  </div>
+</body>
+
 </html>
