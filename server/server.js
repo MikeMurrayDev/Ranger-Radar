@@ -5,11 +5,12 @@ const urlEncodedParser = bodyParser.urlencoded({extended: false});
 
 const app = express();
 
+app.use(express.static('dist'));
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(urlEncodedParser);
 
-app.get('/getit', (req, res) => {
+app.get('/sightings', (req, res) => {
     axios.get('http://rangerradar.pythonanywhere.com/sightings')
     .then((result) => {
         res.send(result.data);
