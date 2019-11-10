@@ -5,11 +5,59 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link href="style.css" rel="stylesheet" type="text/css">
+        <!-- <link href="style.css" rel="stylesheet" type="text/css"> -->
         <title>Ranger Radar</title>
     </head>
 
     <body>
 
+        <div class="container">
+            <form onSubmit="event.preventDefault();handleAnimalSubmit(event)">
+                <div>
+                    <h1>Welcome to the Meetup!</h1>
+                    <p class="banner">Please Fill Out Data</p>
+                </div>
+    
+                <div>
+                    <select type='dropdown' id='animal_dropdown'>
+                        <option value="01">Select your Animal</option>
+                        <option value="12">Rhinoceros</option>
+                        <option value="23">Elephant</option>
+                    </select>
+                </div>
+    
+                <div>
+                    <select type='dropdown' id='captive_dropdown'>
+                        <option value="true">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </div>
+    
+                <div>
+                    <select type='dropdown' id='mappable_dropdown'>
+                        <option value="true">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </div>
+
+                <div>
+                    <select type='dropdown' id='threatened_dropdown'>
+                        <option value="true">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </div>
+
+                <div>
+                    <input type="start_date" value="2010-08-10">
+                </div>
+
+                <div>
+                    <input type="end_date" value="2019-08-10">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <script src="app.js"></script>
     </body>
 </html>
