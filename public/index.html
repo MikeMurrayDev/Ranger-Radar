@@ -66,7 +66,122 @@
     </div>
   </div>
 </div>
-
   <script src="main.js"></script>
   </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Ranger Radar</title>
+  <script src='./config.js'></script>
+  <style>
+    #map {
+      height: 500px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="navbar"><span>Google Maps - Javascript API</span></div>
+  <div id="wrapper">
+    <div id="map"></div>
+    <form onSubmit="event.preventDefault();handleAnimalSubmit(event)">
+            <div>
+              <h1>Welcome to the Meetup!</h1>
+              <p class="banner">Please Fill Out Data</p>
+            </div>
+      
+            <div>
+              <select type='dropdown' id='animal_dropdown'>
+                <option value="01">Select your Animal</option>
+                <option value="12">Rhinoceros</option>
+                <option value="23">Elephant</option>
+              </select>
+            </div>
+      
+            <div>
+              <select type='dropdown' id='captive_dropdown'>
+                <option value="true">True</option>
+                <option value="False">False</option>
+              </select>
+            </div>
+      
+            <div>
+              <select type='dropdown' id='mappable_dropdown'>
+                <option value="true">True</option>
+                <option value="False">False</option>
+              </select>
+            </div>
+      
+            <div>
+              <select type='dropdown' id='threatened_dropdown'>
+                <option value="true">True</option>
+                <option value="False">False</option>
+              </select>
+            </div>
+      
+            <div>
+              <input type="start_date" value="2010-08-10">
+            </div>
+      
+            <div>
+              <input type="end_date" value="2019-08-10">
+            </div>
+            <button onclick="handleAnimalSubmit();initMap();" type="submit">Submit</button>
+          </form>
+    <script>
+      document.write("<script src='" + "https://maps.googleapis.com/maps/api/js?key=" + config + "&callback=initMap" +
+        "'><\/script>");
+      var map;
+
+      function initMap() {
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {
+            lat: -1.5398388646,
+            lng: 35.012608336
+          },
+          zoom: 9
+        });
+
+        var cities = [{
+            "lat": "-1.5398388646",
+            "long": "35.012608336"
+          },
+          {
+            "lat": "0.3507374091",
+            "long": "37.5253124093"
+          },
+          {
+            "lat": "-33.524746457",
+            "long": "25.7267441351"
+          }
+        ]
+
+        for (let i = 0; i < cities.length; i++) {
+          var t = {
+            lat: Number(cities[i].lat),
+            lng: Number(cities[i].long)
+          };
+
+          var icon = {
+            url: './elephante.png',
+            scaledSize: new google.maps.Size(50, 50),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(25, 25)
+          }
+
+          var marker = new google.maps.Marker({
+            position: t,
+            map: map,
+            icon: icon
+          });
+        }
+      }
+
+    </script>
+  </div>
+
+  <script src="app.js"></script>
+</body>
 </html>
