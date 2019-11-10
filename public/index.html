@@ -1,15 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <link href="style.css" rel="stylesheet" type="text/css">
-        <title>Ranger Radar</title>
-    </head>
-
-    <body>
-
-    </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ranger Radar</title>
+    <link rel="stylesheet" href="./styles/style.css" type="text/css" />
+    <script src="./config.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/e78ff938c7.js"></script> -->
+    <!-- <i class="radar-icon" class="fas fa-satellite-dish"></i> -->
+  </head>
+<body>
+  <div class="view-container">
+    <div class="main-container">
+    <div class="header-wrap">
+      <div id="mainTitle">Ranger Radar</div>
+      <hr class="style-seven"/>
+    </div>
+    <div class="row">
+    <div class="col-6 col-toggle">
+      <form onSubmit="event.preventDefault();handleAnimalSubmit(event)">
+      <div class="toggle-label">Species</div>
+        <br />
+          <input class="toggle-view" type="checkbox" id="allToggle">
+          <div class="toggle-item">Show All</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="elephantToggle">
+          <div class="toggle-item">Elephants</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="rhinoToggle" value="23">
+          <div class="toggle-item">Rhinos</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="parrotToggle">
+          <div class="toggle-item">Parrots</div>
+        <br />
+        <br />
+        <!-- onclick="showSpecies() -->
+    </div>
+    <div class="col-6 col-toggle">
+      <div class="toggle-label">Data Points</div>
+        <br />
+          <input class="toggle-view" type="checkbox" id="allToggle">
+          <div class="toggle-item">Show All</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="routeToggle">
+          <div class="toggle-item">Routes</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="sightingsToggle">
+          <div class="toggle-item">Sightings</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="corridorsToggle">
+          <div class="toggle-item">Corridors</div>
+        <br />
+        <br />
+        <!-- onclick="showAllData()
+        onclick="showCorridors()
+        onclick="showSightings()
+        onclick="showRoutes() -->
+      </div>
+    </div>
+    <div class="row">
+      <div id="button-wrap">
+        <button onclick="initMap();handleAnimalSubmit();" type="submit" id="submit-button">Submit</button>
+      </div>
+    </form>
+    </div>
+    <div class="row">
+      <div id="map-wrapper">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    <script>
+      document.write("<script src='" + "https://maps.googleapis.com/maps/api/js?key=" + config + "&callback=initMap" +
+        "'><\/script>");
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {
+            lat: -1.5398388646,
+            lng: 35.012608336
+          },
+          zoom: 9
+        });
+        }
+    </script>
+    <script src="./app.js"></script>
+  </body>
 </html>

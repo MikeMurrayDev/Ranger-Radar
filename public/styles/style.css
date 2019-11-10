@@ -1,0 +1,145 @@
+/*#region Global Variables & HTML*/
+* {
+  box-sizing: border-box; }
+
+body {
+  background-image: linear-gradient(to right, #F2E1BC 0%, #f2f2f2 10%, #f2f2f2 90%, #F2E1BC 100%); }
+
+html {
+  scroll-behavior: smooth; }
+
+/*#endregion Global Variables & HTML*/
+/*#region Layout*/
+.col-1 {
+  width: 8.33%; }
+
+.col-2 {
+  width: 16.66%; }
+
+.col-3 {
+  width: 25%; }
+
+.col-4 {
+  width: 33.33%; }
+
+.col-5 {
+  width: 41.66%; }
+
+.col-6 {
+  width: 50%; }
+
+.col-7 {
+  width: 58.33%; }
+
+.col-8 {
+  width: 66.66%; }
+
+.col-9 {
+  width: 75%; }
+
+.col-10 {
+  width: 83.33%; }
+
+.col-11 {
+  width: 91.66%; }
+
+.col-12 {
+  width: 100%; }
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+[class*="col-"] {
+  float: left; }
+
+/*#endregion Layout*/
+/*#region Main Title & Container*/
+.view-container {
+  width: 100%; }
+
+.main-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 1vh auto 0vh auto; }
+
+.header-wrap {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #5D7254; }
+
+#mainTitle {
+  font-size: 3.75em;
+  font-family: papyrus;
+  color: #FF6C26;
+  margin-top: 10px; }
+
+hr.style-seven {
+  overflow: visible;
+  /* For IE */
+  height: 10px;
+  border-style: solid;
+  border-color: #0d0d0d;
+  border-width: 1px 0 0 0;
+  border-radius: 10px; }
+
+hr.style-seven:before {
+  display: block;
+  content: "";
+  height: 10px;
+  margin-top: -11px;
+  border-style: solid;
+  border-color: #0d0d0d;
+  border-width: 0 0 1px 0;
+  border-radius: 10px; }
+
+/*#endregion Main Title & Container*/
+/*#region Radio Toggles*/
+.col-toggle {
+  text-align: center; }
+
+.toggle-label {
+  color: #FF6C26;
+  text-decoration: underline;
+  font-size: 1.25em; }
+
+.toggle-view {
+  margin-left: 25%;
+  float: left;
+  cursor: pointer; }
+
+.toggle-item {
+  margin-left: 5px;
+  float: left;
+  font-size: 1em; }
+
+.toggle-view, .toggle-item {
+  color: #5D7254;
+  display: inline-flex;
+  vertical-align: middle; }
+
+#button-wrap {
+  width: 100%;
+  text-align: center; }
+
+#submit-button {
+  margin: 10px auto 10px auto;
+  color: #FF6C26;
+  background-color: #5D7254;
+  border-radius: 8px;
+  width: 65px;
+  height: 30px; }
+
+/*#endregion Radio Toggles*/
+/*#region Map Image*/
+#map-wrapper {
+  width: 90%;
+  margin: 0px auto 0px auto; }
+
+#map {
+  width: 100%;
+  height: 500px; }
+
+/*#endregion Map Image*/
