@@ -1,15 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ranger Radar</title>
+    <link rel="stylesheet" href="./styles/style.css" type="text/css" />
+    <!-- <script src="https://kit.fontawesome.com/e78ff938c7.js"></script> -->
+    <!-- <i class="radar-icon" class="fas fa-satellite-dish"></i> -->
+  </head>
+<body>
+  <div class="view-container">
+    <div class="main-container">
+    <div class="header-wrap">
+      <div id="mainTitle">Ranger Radar</div>
+      <hr class="style-seven"/>
+      <!-- <div class="toggle-here">Toggle data viewing on and off here</div> -->
+    </div>
+    <div class="row">
+    <div class="col-6 col-toggle">
+      <div class="toggle-label">Species</div>
+        <br />
+          <input class="toggle-view" type="checkbox" id="allToggle" onclick="showAllSpecies()">
+          <div class="toggle-item">Show All</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="elephantToggle" onclick="showSpecies()">
+          <div class="toggle-item">Elephants</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="rhinoToggle" onclick="showSpecies()">
+          <div class="toggle-item">Rhinos</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="parrotToggle" onclick="showSpecies()">
+          <div class="toggle-item">Parrots</div>
+        <br />
+        <br />
+    </div>
+    <div class="col-6 col-toggle">
+      <div class="toggle-label">Data Points</div>
+        <br />
+          <input class="toggle-view" type="checkbox" id="allToggle" onclick="showAllData()">
+          <div class="toggle-item">Show All</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="routeToggle" onclick="showRoutes()">
+          <div class="toggle-item">Routes</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="sightingsToggle" onclick="showSightings()">
+          <div class="toggle-item">Sightings</div>
+        <br />
+        <br />
+          <input class="toggle-view" type="checkbox" id="corridorsToggle" onclick="showCorridors()">
+          <div class="toggle-item">Corridors</div>
+        <br />
+        <br />
+      </div>
+    </div>
+    <div class="row">
+      <div id="map-wrapper">
+        <div id="map-holder"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <link href="./style.css" rel="stylesheet" type="text/css">
-        <title>Ranger Radar</title>
-    </head>
-
-    <body>
-
-    </body>
+  <script src="main.js"></script>
+  </body>
 </html>
